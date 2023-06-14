@@ -108,6 +108,6 @@ yarn add flexidb
 ```
 
 # Daha Fazlası
-Daha fazla bilgi için GitHub sayfamızı [!ziyaret edebilirsiniz.](https://github.com/Weatrixcik/FlexiDB)]
+Daha fazla bilgi için Npm  Package sayfamızı [ziyaret edebilirsiniz.](https://www.npmjs.com/package/flexidb)
 
 - FlexiDB ile veritabanı işlemlerini kolaylaştırın ve projenizde verilerinizi güvenle yönetin.
