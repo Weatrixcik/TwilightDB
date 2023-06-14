@@ -1,4 +1,4 @@
-# FlexiDB: Veritabanınızı Kolayca Yönetin
+# Flexi.db: Veritabanınızı Kolayca Yönetin
 
 FlexiDB, verilerinizi farklı formatlarda depolamak ve yönetmek için esnek bir Node.js modülüdür. Bu modül sayesinde JSON, MySQL, BSON ve YAML gibi veritabanı formatlarını destekleyerek projenize uygun veri depolama seçenekleri sunar.
 
@@ -13,7 +13,7 @@ FlexiDB, verilerinizi farklı formatlarda depolamak ve yönetmek için esnek bir
 ## Kullanım Örneği
 
 ```javascript
-const FlexiDB = require('flexi.db');
+const {FlexiDB} = require('flexidb');
 
 // Örnek kullanım
 const db = new FlexiDB('mydata.json', 'json'); 
@@ -73,7 +73,7 @@ console.log(indexValues); // ['Luppux']
 
 // Transaksiyonlar
 db.startTransaction();
-db.set('name', 'Jane Smith');
+db.set('name', 'Luppux');
 db.set('age', 35);
 db.commitTransaction();
 console.log(db.read('name')); // Jane Smith
@@ -100,11 +100,11 @@ db.aggregate('users', [{ $group: { _id: '$age', count: { $sum: 1 } } }]); // Agr
 - Modülü projenize eklemek için npm veya yarn paket yöneticisini kullanabilirsiniz.
 
 ```bash
-npm install flexi.db
+npm install flexidb
 ```
 veya
 ```bash
-yarn add flexi.db
+yarn add flexidb
 ```
 
 # Daha Fazlası
