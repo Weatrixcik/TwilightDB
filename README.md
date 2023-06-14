@@ -13,16 +13,30 @@ FlexiDB, verilerinizi farklı formatlarda depolamak ve yönetmek için esnek bir
 ## Kullanım Örneği
 
 ```javascript
-const MyDatabase = require('mydatabase');
+const FlexiDB = require('flexi.db');
 
-// JSON formatında veritabanı
-const dbJson = new MyDatabase('mydata.json', 'json');
+// Örnek kullanım
+const db = new FlexiDB('mydata.json', 'json'); 
+/** 
+ MySQL formatında veritabanı 
+ const dbMysql = new FlexiDB('mydata', 'mysql');
+ **/
 
-dbJson.set('name', 'John');
-dbJson.set('age', 25);
+/**
+ BSON formatında veritabanı 
+ const dbBson = new FlexiDB('mydata.bson', 'bson');
+ **/
 
-console.log(dbJson.get('name')); // Çıktı: John
-console.log(dbJson.get('age')); // Çıktı: 25
+ /**
+ YAML formatında veritabanı
+const dbYaml = new FlexiDB('mydata.yaml', 'yaml');
+ **/
+
+db.set('name', 'Luppux');
+db.set('age', 25);
+
+console.log(db.get('name')); // Çıktı: Luppux
+console.log(db.get('age')); // Çıktı: 25
 ```
 
 # Yükleme 
