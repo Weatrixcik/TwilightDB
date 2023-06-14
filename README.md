@@ -31,12 +31,68 @@ const db = new FlexiDB('mydata.json', 'json');
  YAML formatında veritabanı
 const dbYaml = new FlexiDB('mydata.yaml', 'yaml');
  **/
+ 
+ /**
+Mysql formatında veritabanı 
+db.connectMySQL({
+  host: 'localhost',
+  user: 'root',
+  password: 'password',
+  database: 'mydatabase',
+});
+**/
 
-db.set('name', 'Luppux');
-db.set('age', 25);
 
-console.log(db.get('name')); // Çıktı: Luppux
-console.log(db.get('age')); // Çıktı: 25
+// Veri oluşturma
+db.create('name', 'Luppux');
+db.create('age', 25);
+
+// Veri okuma
+console.log(db.read('name')); // 
+
+// Veri güncelleme
+db.update('age', 30);
+console.log(db.read('age')); // 30
+
+// Veri silme
+db.delete('age');
+console.log(db.read('age')); // undefined
+
+// Veri sorgulama
+const results = db.query((key, value) => value.includes('J'));
+console.log(results); // [['name', 'Luppux']]
+
+
+// MySQL bağlantısı kapatma
+db.closeConnection();
+
+// İndeksleme
+db.createIndex('name');
+const indexValues = db.getIndexValues();
+console.log(indexValues); // ['Luppux']
+
+// Transaksiyonlar
+db.startTransaction();
+db.set('name', 'Jane Smith');
+db.set('age', 35);
+db.commitTransaction();
+console.log(db.read('name')); // Jane Smith
+console.log(db.read('age')); // 35
+
+// Veritabanı yedekleme ve geri yükleme
+db.backup('backup.json');
+db.restore('backup.json');
+console.log(db.read('name')); // Luppux
+
+// Diğer işlemler
+db.createCollection('users'); // Yeni bir koleksiyon oluşturur
+db.insert('users', { name: 'Alice', age: 30 }); // Koleksiyona yeni bir belge ekler
+db.find('users', { age: { $gt: 25 } }); // Belirli bir koşula göre belgeleri bulur
+db.updateOne('users', { name: 'Alice' }, { $set: { age: 31 } }); // Belirli bir belgeyi günceller
+db.deleteOne('users', { name: 'Alice' }); // Belirli bir belgeyi siler
+db.aggregate('users', [{ $group: { _id: '$age', count: { $sum: 1 } } }]); // Agregasyon işlemi yapar
+// ...
+
 ```
 
 # Yükleme 
