@@ -1,6 +1,6 @@
-# Flexi.db: Veritabanınızı Kolayca Yönetin
+# Twilight.db: Veritabanınızı Kolayca Yönetin
 
-FlexiDB, verilerinizi farklı formatlarda depolamak ve yönetmek için esnek bir Node.js modülüdür. Bu modül sayesinde JSON, MySQL, BSON ve YAML gibi veritabanı formatlarını destekleyerek projenize uygun veri depolama seçenekleri sunar.
+TwilightDB, verilerinizi farklı formatlarda depolamak ve yönetmek için esnek bir Node.js modülüdür. Bu modül sayesinde JSON, MySQL, BSON ve YAML gibi veritabanı formatlarını destekleyerek projenize uygun veri depolama seçenekleri sunar.
 
 ## Özellikler
 
@@ -13,24 +13,24 @@ FlexiDB, verilerinizi farklı formatlarda depolamak ve yönetmek için esnek bir
 ## Kullanım Örneği
 
 ```javascript
-const {FlexiDB} = require('flexidb');
+const { TwilightDB } = require('twilight.db');
 
 // Örnek kullanım
-const db = new FlexiDB('mydata.json', 'json'); 
+const db = new TwilightDB('mydata.json', 'json'); 
 
 /**
  BSON formatında veritabanı 
- const dbBson = new FlexiDB('mydata.bson', 'bson');
+ const dbBson = new TwilightDB('mydata.bson', 'bson');
  **/
 
  /**
  YAML formatında veritabanı
-const dbYaml = new FlexiDB('mydata.yaml', 'yaml');
+const dbYaml = new TwilightDB('mydata.yaml', 'yaml');
  **/
  
  /**
 Mysql formatında veritabanı 
-const mysql = require('mysql'); // flexidb nin hemen altına yapıştırcan
+const mysql = require('mysql'); // twilight.db nin hemen altına yapıştırcan
 
 const config = {
   host: 'localhost', // MySQL sunucusunun adresi
@@ -110,14 +110,14 @@ db.aggregate('users', [{ $group: { _id: '$age', count: { $sum: 1 } } }]); // Agr
 - Modülü projenize eklemek için npm veya yarn paket yöneticisini kullanabilirsiniz.
 
 ```bash
-npm install flexidb
+npm install twilight.db
 ```
 veya
 ```bash
-yarn add flexidb
+yarn add twilight.db
 ```
 
 # Daha Fazlası
-Daha fazla bilgi için GitHub sayfamızı [!ziyaret edebilirsiniz.](https://github.com/Weatrixcik/FlexiDB)
+Daha fazla bilgi için GitHub sayfamızı [!ziyaret edebilirsiniz.](https://github.com/Weatrixcik/TwilightDB)
 
-- FlexiDB ile veritabanı işlemlerini kolaylaştırın ve projenizde verilerinizi güvenle yönetin.
+- TwilightDB ile veritabanı işlemlerini kolaylaştırın ve projenizde verilerinizi güvenle yönetin.
