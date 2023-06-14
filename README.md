@@ -38,6 +38,6 @@ yarn add flexi.db
 ```
 
 # Daha Fazlası
-Daha fazla bilgi için GitHub sayfamızı [ziyaret edebilirsiniz.](https://github.com/Weatrixcik/FlexiDB)]
+Daha fazla bilgi için GitHub sayfamızı [!ziyaret edebilirsiniz.](https://github.com/Weatrixcik/FlexiDB)]
 
 - FlexiDB ile veritabanı işlemlerini kolaylaştırın ve projenizde verilerinizi güvenle yönetin.
