@@ -17,10 +17,6 @@ const {FlexiDB} = require('flexidb');
 
 // Örnek kullanım
 const db = new FlexiDB('mydata.json', 'json'); 
-/** 
- MySQL formatında veritabanı 
- const dbMysql = new FlexiDB('mydata', 'mysql');
- **/
 
 /**
  BSON formatında veritabanı 
@@ -34,11 +30,25 @@ const dbYaml = new FlexiDB('mydata.yaml', 'yaml');
  
  /**
 Mysql formatında veritabanı 
-db.connectMySQL({
-  host: 'localhost',
-  user: 'root',
-  password: 'password',
-  database: 'mydatabase',
+const mysql = require('mysql'); // flexidb nin hemen altına yapıştırcan
+
+const config = {
+  host: 'localhost', // MySQL sunucusunun adresi
+  port: 3306, // Bağlantı noktası
+  user: 'kullaniciadi', // MySQL kullanıcı adı
+  password: 'sifre', // MySQL kullanıcı şifresi
+  database: 'veritabani', // Bağlanmak istediğiniz veritabanının adı
+};
+
+const connection = mysql.createConnection(config);
+
+connection.connect((err) => {
+  if (err) {
+    console.error('Bağlantı hatası:', err);
+  } else {
+    console.log('MySQL sunucusuna bağlandı!');
+    // Bağlantı başarılı bir şekilde kurulduğunda burada işlemlerinizi yapabilirsiniz.
+  }
 });
 **/
 
@@ -108,6 +118,6 @@ yarn add flexidb
 ```
 
 # Daha Fazlası
-Daha fazla bilgi için Npm  Package sayfamızı [ziyaret edebilirsiniz.](https://www.npmjs.com/package/flexidb)
+Daha fazla bilgi için GitHub sayfamızı [!ziyaret edebilirsiniz.](https://github.com/Weatrixcik/FlexiDB)
 
 - FlexiDB ile veritabanı işlemlerini kolaylaştırın ve projenizde verilerinizi güvenle yönetin.
