@@ -118,6 +118,6 @@ yarn add twilight.db
 ```
 
 # Daha Fazlası
-Daha fazla bilgi için GitHub sayfamızı [!ziyaret edebilirsiniz.](https://github.com/Weatrixcik/TwilightDB)
+Daha fazla bilgi için GitHub sayfamızı [!ziyaret edebilirsiniz.](https://www.npmjs.com/package/twilight.db)
 
 - TwilightDB ile veritabanı işlemlerini kolaylaştırın ve projenizde verilerinizi güvenle yönetin.
