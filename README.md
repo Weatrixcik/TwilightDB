@@ -54,7 +54,7 @@ connection.connect((err) => {
 
 
 // Veri oluşturma
-db.create('name', 'Luppux');
+db.create('name', 'Twilight');
 db.create('age', 25);
 
 // Veri okuma
@@ -70,7 +70,7 @@ console.log(db.read('age')); // undefined
 
 // Veri sorgulama
 const results = db.query((key, value) => value.includes('J'));
-console.log(results); // [['name', 'Luppux']]
+console.log(results); // [['name', 'Twilight']]
 
 
 // MySQL bağlantısı kapatma
@@ -79,11 +79,11 @@ db.closeConnection();
 // İndeksleme
 db.createIndex('name');
 const indexValues = db.getIndexValues();
-console.log(indexValues); // ['Luppux']
+console.log(indexValues); // ['Twilight']
 
 // Transaksiyonlar
 db.startTransaction();
-db.set('name', 'Luppux');
+db.set('name', 'Twilight');
 db.set('age', 35);
 db.commitTransaction();
 console.log(db.read('name')); // Jane Smith
@@ -92,7 +92,7 @@ console.log(db.read('age')); // 35
 // Veritabanı yedekleme ve geri yükleme
 db.backup('backup.json');
 db.restore('backup.json');
-console.log(db.read('name')); // Luppux
+console.log(db.read('name')); // Twilight
 
 // Diğer işlemler
 db.createCollection('users'); // Yeni bir koleksiyon oluşturur
